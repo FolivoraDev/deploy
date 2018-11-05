@@ -283,3 +283,7 @@ pip-selfcheck.json
 
 .secrets/
 # End of https://www.gitignore.io/api/git,linux,macos,python,pycharm+all,jupyternotebook
+
+# media, static ROOT
+/.media
+/.static
