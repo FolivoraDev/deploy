@@ -9,7 +9,11 @@ RUN         apt -y install python3-pip
 
 # Nginx, uWSGI 설치
 RUN         apt -y install nginx
+RUN         apt -y install supervisor
 RUN         pip3 install uwsgi
+RUN         pip3 install psycopg2-binary
+
+ENV         export LANG=C.UTF-8
 
 # 파일 복사 후 패키지 설치
 # 파일의 내용이 바뀌지 않으면 pip3 install.. 부분이 실행되지 않음
@@ -35,3 +39,7 @@ RUN         cp -f   /srv/project/.config/app.nginx /etc/nginx/sites-available/
 RUN         ln -sf  /etc/nginx/sites-available/app.nginx /etc/nginx/sites-enabled/app.nginx
 
 CMD         uwsgi --http :8000 --chdir /srv/project/app --wsgi config.wsgi
+
+# supervisor
+RUN         cp -f   /srv/project/.config/supervisor/nginx.conf /etc/supervisor/conf.d
+RUN         cp -f   /srv/project/.config/supervisor/uwsgi.conf /etc/supervisor/conf.d

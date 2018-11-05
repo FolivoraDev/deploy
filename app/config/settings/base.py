@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'members'
+    'members',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -106,3 +107,4 @@ USE_TZ = True
 
 # 인증에 사용할 커스텀 유저 모델 지정
 AUTH_USER_MODEL = 'members.User'
+
