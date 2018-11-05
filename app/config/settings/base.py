@@ -2,8 +2,7 @@ import json
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 SECRET_DIR = os.path.join(ROOT_DIR, '.secrets')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
@@ -22,6 +21,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 
 STATIC_URL = '/static/'
+
 
 ALLOWED_HOSTS = [
     '.amazonaws.com',
@@ -103,3 +103,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+# 인증에 사용할 커스텀 유저 모델 지정
+AUTH_USER_MODEL = 'members.User'
