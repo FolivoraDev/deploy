@@ -287,3 +287,8 @@ pip-selfcheck.json
 # media, static ROOT
 /.media
 /.static
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

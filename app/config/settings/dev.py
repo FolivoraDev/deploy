@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = True
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.dev.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
