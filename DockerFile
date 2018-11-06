@@ -15,7 +15,7 @@ RUN         pip3 install psycopg2-binary
 
 # 파일 복사 후 패키지 설치
 # 파일의 내용이 바뀌지 않으면 pip3 install.. 부분이 실행되지 않음
-COPY        requiments.txt /tmp
+COPY        requiments-production.txt /tmp/requiments.txt
 RUN         pip3 install -r /tmp/requiments.txt
 COPY        . /tmp
 
