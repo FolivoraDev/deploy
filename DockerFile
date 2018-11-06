@@ -19,8 +19,6 @@ RUN         rm -rf  /etc/nginx/sites-available/* && \
 RUN         cp -f   /srv/project/.config/app.nginx /etc/nginx/sites-available/
 RUN         ln -sf  /etc/nginx/sites-available/app.nginx /etc/nginx/sites-enabled/app.nginx
 
-CMD         uwsgi --http :8000 --chdir /srv/project/app --wsgi config.wsgi
-
 # supervisor
 RUN         cp -f   /srv/project/.config/supervisor/nginx.conf /etc/supervisor/conf.d
 RUN         cp -f   /srv/project/.config/supervisor/uwsgi.conf /etc/supervisor/conf.d

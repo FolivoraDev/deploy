@@ -2,8 +2,7 @@
 # docker build -t ec2-deploy -f dockerfile .
 FROM        python:3.6.7-slim
 MAINTAINER  folivoradev@gmail.com
-
-ENV         export LANG=C.UTF-8
+ENV         LANG C.UTF-8
 
 RUN         apt -y update
 RUN         apt -y dist-upgrade
@@ -14,8 +13,6 @@ RUN         apt -y install nginx supervisor &&\
             pip3 install uwsgi &&\
             apt -y remove gcc &&\
             apt -y autoremove
-
-RUN         pip3 install psycopg2-binary
 
 # 파일 복사 후 패키지 설치
 # 파일의 내용이 바뀌지 않으면 pip3 install.. 부분이 실행되지 않음
