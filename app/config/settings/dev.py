@@ -42,6 +42,3 @@ LOGGING = {
         }
     }
 }
-
-DEBUG = False
-ALLOWED_HOSTS = ['abc']
